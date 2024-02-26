@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Username Check</title>
+ <style>
+   body {
+     font-family: sans-serif;
+     text-align: center;
+   }
+
+   #check-button {
+     padding: 10px 20px;
+     margin: 20px 0;
+     border: 1px solid #ddd;
+     border-radius: 5px;
+     cursor: pointer;
+   }
+
+   #message {
+     font-weight: bold;
+     margin-top: 10px;
+   }
+ </style>
+</head>
+<body>
+ <button id="check-button">Enter Username</button>
+ <p id="message"></p>
+ <script>
+   const checkButton = document.getElementById("check-button");
+   const messageElement = document.getElementById("message");
+
+   checkButton.addEventListener("click", () => {
+     const username = prompt("Enter your username:");
+     if (username.toLowerCase() === "aditya") {
+       messageElement.textContent = "Welcome, Aditya!";
+     } else {
+       messageElement.textContent = "Hello, " + username + "!";
+     }
+   });
+ </script>
+</body>
+</html>
