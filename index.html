@@ -1,44 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Username Check</title>
- <style>
-   body {
-     font-family: sans-serif;
-     text-align: center;
-   }
-
-   #check-button {
-     padding: 10px 20px;
-     margin: 20px 0;
-     border: 1px solid #ddd;
-     border-radius: 5px;
-     cursor: pointer;
-   }
-
-   #message {
-     font-weight: bold;
-     margin-top: 10px;
-   }
- </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Username Prompt</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    #container {
+        text-align: center;
+        margin-top: 100px;
+    }
+    #output {
+        margin-top: 20px;
+    }
+</style>
 </head>
 <body>
- <button id="check-button">Enter Username</button>
- <p id="message"></p>
- <script>
-   const checkButton = document.getElementById("check-button");
-   const messageElement = document.getElementById("message");
+<div id="container">
+    <h2>Enter Your Username:</h2>
+    <input type="text" id="usernameInput">
+    <button onclick="checkUsername()">Submit</button>
+    <div id="output"></div>
+</div>
 
-   checkButton.addEventListener("click", () => {
-     const username = prompt("Enter your username:");
-     if (username.toLowerCase() === "aditya") {
-       messageElement.textContent = "Welcome, Aditya!";
-     } else {
-       messageElement.textContent = "Hello, " + username + "!";
-     }
-   });
- </script>
+<script>
+    function checkUsername() {
+        var username = document.getElementById("usernameInput").value;
+        var outputDiv = document.getElementById("output");
+        
+        if (username.toLowerCase() === "aditya") {
+            outputDiv.innerHTML = "<p>Welcome back, Aditya!</p>";
+        } else {
+            outputDiv.innerHTML = "<p>Hello, " + username + "!</p>";
+        }
+    }
+</script>
 </body>
 </html>
